@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 function Navbar(props){
-  let color='';
+  let color='';let boxShadowStyle = {};
   if(props.mode==='dark'){
     color='light'
     document.body.style.backgroundColor='#00001a'
@@ -11,13 +11,13 @@ function Navbar(props){
   }
   else{
     color='dark'
-    document.body.style.backgroundColor='white'
+    document.body.style.backgroundColor='#e6ffff'
     document.body.style.color='black'
-    
+    boxShadowStyle = { boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' };
   }
     return (
         <>
-        <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
+        <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} style={boxShadowStyle}>
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">{props.title}</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
