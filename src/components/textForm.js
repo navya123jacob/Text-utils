@@ -78,7 +78,7 @@ function findAndReplace() {
 
     <div className="container my-2">
       <h1>Your text summary</h1>
-      <p> {text.length?text.split(' ').filter((e)=>{return e.length!==0}).length:0} words and <b>{text.length}</b> characters in {text.length?0.08 * text.split(' ').length:0 } minutes</p>
+      <p> {text.length?text.split(/\s+/).filter((e)=>{return e.length!==0}).length:0} words and <b>{text.length}</b> characters in {text.length?0.08 * text.split(' ').length:0 } minutes</p>
       <p>{text.trim().length>0? <pre>{text}</pre>:'Nothing to preview'}</p>
     </div>
     <div className="mb-3">
